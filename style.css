@@ -80,6 +80,10 @@ header {
 }
 
 /* ===================================== main ==============================================*/
+main {
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .title-wrapper {
   padding: 20px 0;
   border-bottom: 1px solid #e6e6e6;
@@ -153,5 +157,33 @@ header {
 }
 
 /* ===================================== footer ============================================*/
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.copyright {
+  align-self: flex-end;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 15.6px;
+}
+
+.social-list {
+  display: flex;
+  align-items: center;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.social-link {
+  color: #09e079;
+  fill: currentColor;
+}
 
 /* ===================================== media quaries =====================================*/
