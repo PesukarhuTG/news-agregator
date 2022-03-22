@@ -4,6 +4,15 @@
   padding: 0;
 }
 
+body {
+  font-family: Roboto, sans-serif;
+  color: #212121;
+}
+
+.visual-hidden {
+  display: none;
+}
+
 .container {
   max-width: 1140px;
   width: 100%;
@@ -21,6 +30,10 @@ button {
 }
 
 /* ===================================== header ============================================*/
+header {
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -67,6 +80,16 @@ button {
 }
 
 /* ===================================== main ==============================================*/
+.title-wrapper {
+  padding: 20px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 130%;
+}
 
 /* ===================================== footer ============================================*/
 
