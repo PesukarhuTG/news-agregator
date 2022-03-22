@@ -91,6 +91,67 @@ header {
   line-height: 130%;
 }
 
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  gap: 40px 20px;
+}
+
+/* =========== card ============*/
+.news-item {
+  width: 270px;
+  height: 360px;
+}
+
+.news-link {
+  display: block;
+  max-width: 240px;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 21px;
+  text-decoration: none;
+  color: #212121;
+}
+
+.news-title {
+  position: relative;
+}
+
+.news-title::after {
+  display: block;
+  position: absolute;
+  content: " ";
+  background-image: url("./assets/img/icon-link.svg");
+  height: 24px;
+  width: 24px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.news-description {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 15, 6px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.news-datetime,
+.news-author {
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 300;
+}
+
 /* ===================================== footer ============================================*/
 
 /* ===================================== media quaries =====================================*/
