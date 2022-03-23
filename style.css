@@ -126,6 +126,22 @@ input[type="search"]::-webkit-search-cancel-button {
   cursor: pointer;
 }
 
+.change-mode {
+  width: 30px;
+  height: 30px;
+  padding: 0 30px;
+}
+
+.icon-mode {
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}
+
+.change-mode:hover .icon-mode {
+  fill: #09e079;
+}
+
 /* ===================================== main ==============================================*/
 
 .title-wrapper {
