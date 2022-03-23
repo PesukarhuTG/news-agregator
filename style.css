@@ -59,6 +59,12 @@ header {
   outline: none;
 }
 
+.icon-search {
+  width: 22px;
+  height: 22px;
+  fill: #212121;
+}
+
 .search-submit {
   position: absolute;
   top: -2px;
@@ -175,6 +181,13 @@ main {
   font-size: 12px;
   font-weight: 300;
   line-height: 15.6px;
+}
+
+.icon-twitter,
+.icon-habr,
+.icon-vk {
+  width: 30px;
+  height: 30px;
 }
 
 .social-list {
