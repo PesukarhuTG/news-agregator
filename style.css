@@ -301,7 +301,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* ===================================== media quaries =====================================*/
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1065px) {
   .form-search {
     width: 100%;
     max-width: 655px;
@@ -314,6 +314,12 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media screen and (max-width: 810px) {
+  .mode {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+  }
+
   .header-container {
     flex-direction: column;
   }
