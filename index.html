@@ -8,12 +8,17 @@
   <title>Only Fresh News - агрегатор новостей</title>
   <link href="assets/img/favicon.ico" rel="icon" type="image/x-icon" />
   <link rel="stylesheet" href="style.css">
+  <script src="scripts/script.js" type="module"></script>
 </head>
 
 <body>
   <header class="header">
     <div class="container header-container">
-      <img class="logo" src="assets/img/logo.svg" alt="news-company-logo">
+      <div class="logo">
+        <svg class="icon icon-logo">
+          <use class="icon-svg-logo" xlink:href="assets/img/sprite.svg#logo-dark"></use>
+        </svg>
+      </div>
 
       <form class="form-search">
         <div class="search-label">
@@ -171,7 +176,11 @@
 
   <footer class="footer">
     <div class="container footer-container">
-      <img class="footer-logo" src="assets/img/logo.svg" alt="news-company-logo">
+      <div class="logo">
+        <svg class="icon icon-logo">
+          <use class="icon-svg-logo" xlink:href="assets/img/sprite.svg#logo-dark"></use>
+        </svg>
+      </div>
 
       <p class="copyright">@ 2020-2022 News</p>
 
