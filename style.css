@@ -7,7 +7,7 @@
 }
 
 body {
-  min-width: 320px;
+  min-width: 300px;
   min-height: 100vh;
   font-family: Roboto, sans-serif;
   color: #212121;
@@ -215,6 +215,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .footer {
   padding-top: 22px;
   padding-bottom: 22px;
+  border-top: 1px solid #e6e6e6;
 }
 
 .footer-container {
@@ -263,3 +264,56 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* ===================================== media quaries =====================================*/
+@media screen and (max-width: 1030px) {
+  .form-search {
+    width: 100%;
+    max-width: 655px;
+  }
+
+  .search-label {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .form-search {
+    flex-direction: column;
+    width: 90%;
+    max-width: none;
+  }
+
+  .search-label {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .js-choice {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-logo,
+  .copyright,
+  .social-list {
+    justify-self: center;
+    align-self: center;
+  }
+}
