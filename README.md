@@ -3,4 +3,4 @@
 - Implement dark/light mode <br>
 **💻 [Preview link here ►](https://pesukarhutg.github.io/news-agregator/)**<br>
 <br><br>
-![screen-agregator](https://user-images.githubusercontent.com/39487464/159510080-076dd227-cfbf-400e-b299-019b15ac0f36.JPG)
+![prev-news](https://user-images.githubusercontent.com/39487464/159726545-1ac6aa99-00db-4956-96f4-1fad30e093c0.gif)
