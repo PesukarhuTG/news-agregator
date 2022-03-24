@@ -1,4 +1,4 @@
-import { getNews } from './getData.js';
+import getData from './getData.js';
 
 const newsList = document.querySelector('.news-list');
 
@@ -29,7 +29,7 @@ const renderCard = (data) => {
 }
 
 const loadNews = async () => {
-  const data = await getNews();
+  const data = await getData('https://newsapi.org/v2/top-headlines?country=ru');
   renderCard(data.articles);
 }
 
