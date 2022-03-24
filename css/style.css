@@ -133,21 +133,26 @@ input[type="search"]::-webkit-search-cancel-button {
   fill: var(--font-color);
 }
 
-.js-choice {
+.choices {
   width: 320px;
+}
+
+.choices__inner {
+  display: flex;
+  align-items: center;
   height: 44px;
-  padding: 0 20px;
+  padding-left: 20px;
+  background-color: transparent;
   border: 1px solid var(--border-color);
   border-radius: 22px;
-  outline: none;
+}
 
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-position-x: 97%;
-  background-position-y: 5px;
-  cursor: pointer;
+.choices__placeholder {
+  opacity: 1;
+}
+
+.choices[data-type*="select-one"]::after {
+  right: 20px;
 }
 
 .change-mode {
