@@ -361,15 +361,18 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media screen and (max-width: 470px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
-  .footer-logo,
-  .copyright,
-  .social-list {
-    justify-self: center;
-    align-self: center;
+  .copyright {
+    grid-column: 1/3;
+    order: 1;
   }
 }
