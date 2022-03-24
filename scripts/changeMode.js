@@ -1,45 +1,30 @@
 const changeMode = function () {
   const modeBtn = document.querySelector('.mode');
+  const cssFile = document.querySelector('#theme-css');
   const iconModeSet = document.querySelector('.icon-mode-set');
-  const iconLogo = document.querySelectorAll('.icon-svg-logo');
 
-  let themeNews = localStorage.getItem('themeNews') ? localStorage.getItem('themeNews') : 'light';
-  changeTheme();
+  function changeIconMode() {
+    if (localStorage.getItem('themeNews') === 'light') {
+      iconModeSet.setAttribute('href', 'assets/img/sprite.svg#icon-dark-mode');
+    } else if (localStorage.getItem('themeNews') === 'dark') {
+      iconModeSet.setAttribute('href', 'assets/img/sprite.svg#icon-light-mode');
+    }
+  }
 
-  function setLocalStorageTheme() {
-    localStorage.setItem('themeNews', themeNews);
+  function setLocalStorageTheme(mode) {
+    localStorage.setItem('themeNews', mode);
   }
 
   function changeTheme() {
-    if (themeNews === 'light') {
-      document.documentElement.style.setProperty('--font-color', '#212121');
-      document.documentElement.style.setProperty('--background-color', '#fff');
-      document.documentElement.style.setProperty('--second-font-color', '#8e8e8e');
-      document.documentElement.style.setProperty('--border-color', '#e6e6e6');
 
-      iconModeSet.setAttribute('href', 'assets/img/sprite.svg#icon-dark-mode');
-
-      iconLogo.forEach(logo => {
-        logo.setAttribute('href', 'assets/img/sprite.svg#logo-dark');
-      });
-
-      setLocalStorageTheme(themeNews);
-      themeNews = 'dark';
-
-    } else if (themeNews === 'dark') {
-      document.documentElement.style.setProperty('--font-color', '#fff');
-      document.documentElement.style.setProperty('--background-color', '#212121');
-      document.documentElement.style.setProperty('--second-font-color', '#fff');
-      document.documentElement.style.setProperty('--border-color', '#4c4b4b');
-
-      iconModeSet.setAttribute('href', 'assets/img/sprite.svg#icon-light-mode');
-
-      iconLogo.forEach(logo => {
-        logo.setAttribute('href', 'assets/img/sprite.svg#logo-light');
-      });
-
-      setLocalStorageTheme(themeNews);
-      themeNews = 'light';
+    if (localStorage.getItem('themeNews') === 'light') {
+      setLocalStorageTheme('dark');
+      cssFile.href = `css/${localStorage.getItem('themeNews')}.css`;
+      changeIconMode();
+    } else if (localStorage.getItem('themeNews') === 'dark') {
+      setLocalStorageTheme('light');
+      cssFile.href = `css/${localStorage.getItem('themeNews')}.css`;
+      changeIconMode();
     }
   }
 
@@ -47,6 +32,7 @@ const changeMode = function () {
     changeTheme();
   });
 
+  changeIconMode();
 };
 
 export default changeMode;

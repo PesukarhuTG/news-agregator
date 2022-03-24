@@ -1,10 +1,6 @@
 :root {
-  --font-color: #212121;
-  --background-color: #fff;
   --accent-color: #09e079;
   --hover-color: #1c9c5f;
-  --second-font-color: #8e8e8e;
-  --border-color: #e6e6e6;
 }
 
 html {
@@ -73,6 +69,10 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* ===================================== header ============================================*/
+.icon-svg-logo {
+  fill: var(--font-color);
+}
+
 .header {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -213,7 +213,7 @@ input[type="search"]::-webkit-search-cancel-button {
   display: block;
   margin-bottom: 10px;
   font-size: 16px;
-  background-image: url("./assets/img/icon-link.svg");
+  background-image: url("../assets/img/icon-link.svg");
   background-repeat: no-repeat;
   background-position: top right;
   padding-right: 30px;
