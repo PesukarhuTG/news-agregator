@@ -13,7 +13,7 @@ const renderCard = (data) => {
         <img class="news-image" src="${news.urlToImage ? news.urlToImage : './assets/img/poster.jpg'}"
             alt="${news.title}" width="270" height="140">
         <h3 class="news-title">
-              <a href="${news.url}" class="news-link" target="_blank">${news.title}</a>
+              <a href="${news.url}" class="news-link" target="_blank">${news.title || ''}</a>
         </h3>
         <p class="news-description">${news.description || ''}</p>
         <div class="news-footer">
