@@ -15,6 +15,6 @@ const getData = url => fetch(url, {
   .catch(err => console.error(err));
 
 export const getNews = async (country = 'ru') => {
-  const url = `${BASE_URL}?country=${country}&api_key=${API_KEY}`;
+  const url = `${BASE_URL}?country=${country}&apiKey=${API_KEY}`;
   return await getData(url);
 };
