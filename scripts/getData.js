@@ -1,14 +1,20 @@
 const API_KEY = 'db5b2429fa90443f99bcf3ce0852cedb';
+const BASE_URL = 'https://newsapi.org/v2/top-headlines';
 
-const getData = async (url) => {
-  const resp = await fetch(url, {
-    headers: {
-      'X-Api-Key': API_KEY,
+const getData = url => fetch(url, {
+  headers: {
+    'X-Api-Key': API_KEY,
+  }
+})
+  .then(response => {
+    if (response.ok) {
+      return response.json();
     }
-  });
+    throw `Упс, что-то пошло не так: ${response.status}`
+  })
+  .catch(err => console.error(err));
 
-  const data = await resp.json();
-  return data;
+export const getNews = async (country = 'ru') => {
+  const url = `${BASE_URL}?country=${country}&api_key=${API_KEY}`;
+  return await getData(url);
 };
-
-export default getData;
