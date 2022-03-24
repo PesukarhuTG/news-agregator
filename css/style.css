@@ -206,6 +206,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .news-image {
   width: 100%;
+  height: 140px;
   margin-bottom: 10px;
   object-fit: cover;
 }
