@@ -20,6 +20,9 @@ html {
 }
 
 body {
+  display: flex; /*чтобы прижать footer*/
+  flex-direction: column; /*чтобы прижать footer*/
+
   min-width: 300px;
   min-height: 100vh;
   font-family: Roboto, sans-serif;
@@ -164,6 +167,10 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* ===================================== main ==============================================*/
+
+.main {
+  flex-grow: 1; /*чтобы прижать footer*/
+}
 
 .title-wrapper {
   padding-top: 20px;
