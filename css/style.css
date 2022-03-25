@@ -190,6 +190,10 @@ input[type="search"]::-webkit-search-cancel-button {
   font-weight: 700;
 }
 
+.hide {
+  display: none;
+}
+
 .news {
   padding-top: 40px;
   padding-bottom: 50px;

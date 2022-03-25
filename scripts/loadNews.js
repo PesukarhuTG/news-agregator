@@ -2,6 +2,7 @@ import getData from './getData.js';
 import designSelect from './designSelect.js';
 
 const newsList = document.querySelector('.news-list');
+const title = document.querySelector('.title');
 
 export const renderCard = (data) => {
   newsList.textContent = '';
@@ -31,6 +32,7 @@ export const renderCard = (data) => {
 
 export const loadNews = async () => {
   newsList.innerHTML = '<li class="preload"></li>';
+  title.classList.add('hide');
 
   const country = localStorage.getItem('country') || 'ru';
 
