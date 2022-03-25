@@ -19,18 +19,39 @@ const getCorrectDateFormat = isoDate => {
   return `<span class="news-date">${fullDate}</span> ${fullTime}`;
 };
 
+const getImage = url => new Promise((resolve) => {
+  const image = new Image(270, 140);
+
+  //image checking
+  image.addEventListener('load', () => {
+    resolve(image);
+  });
+
+  image.addEventListener('error', () => {
+    image.src = './assets/img/poster.jpg';
+    resolve(image);
+  });
+
+  image.src = url || './assets/img/poster.jpg';
+  image.className = 'news-image';
+
+  return image;
+});
+
 export const renderCard = (data) => {
   newsList.textContent = '';
 
-  data.forEach(news => {
+  data.forEach(async news => {
     const { urlToImage, title, url, description, publishedAt, author } = news;
 
     const card = document.createElement('li');
     card.className = 'news-item';
 
-    card.innerHTML = `
-        <img class="news-image" src="${urlToImage ? urlToImage : './assets/img/poster.jpg'}"
-            alt="${title}" width="270" height="140">
+    const image = await getImage(urlToImage);
+    image.alt = title;
+    card.append(image);
+
+    card.insertAdjacentHTML('beforeend', `
         <h3 class="news-title">
               <a href="${url}" class="news-link" target="_blank">${title || ''}</a>
         </h3>
@@ -41,7 +62,7 @@ export const renderCard = (data) => {
             </time>
             <div class="news-author">${author || ''}</div>
         </div>
-    `;
+`);
 
     newsList.append(card);
   })
