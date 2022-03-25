@@ -8,21 +8,23 @@ export const renderCard = (data) => {
   newsList.textContent = '';
 
   data.forEach(news => {
+    const { urlToImage, title, url, description, publishedAt, author } = news;
+
     const card = document.createElement('li');
     card.className = 'news-item';
 
     card.innerHTML = `
-        <img class="news-image" src="${news.urlToImage ? news.urlToImage : './assets/img/poster.jpg'}"
-            alt="${news.title}" width="270" height="140">
+        <img class="news-image" src="${urlToImage ? urlToImage : './assets/img/poster.jpg'}"
+            alt="${title}" width="270" height="140">
         <h3 class="news-title">
-              <a href="${news.url}" class="news-link" target="_blank">${news.title || ''}</a>
+              <a href="${url}" class="news-link" target="_blank">${title || ''}</a>
         </h3>
-        <p class="news-description">${news.description || ''}</p>
+        <p class="news-description">${description || ''}</p>
         <div class="news-footer">
-            <time class="news-datetime" datetime="${news.publishedAt}">
-                <span class="news-date">${news.publishedAt}</span> 11:06
+            <time class="news-datetime" datetime="${publishedAt}">
+                <span class="news-date">${publishedAt}</span> 11:06
             </time>
-            <div class="news-author">${news.author || ''}</div>
+            <div class="news-author">${author || ''}</div>
         </div>
     `;
 
