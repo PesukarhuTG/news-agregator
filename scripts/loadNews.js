@@ -28,8 +28,12 @@ const renderCard = (data) => {
   })
 }
 
-const loadNews = async () => {
-  const data = await getData('https://newsapi.org/v2/top-headlines?country=ru');
+const loadNews = async (country) => {
+  if (!country) {
+    country = 'ru';
+  }
+
+  const data = await getData(`https://newsapi.org/v2/top-headlines?country=${country}`);
   renderCard(data.articles);
 }
 
