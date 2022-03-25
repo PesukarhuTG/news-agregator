@@ -314,6 +314,23 @@ input[type="search"]::-webkit-search-cancel-button {
   height: 30px;
 }
 
+/* =========== preload ============*/
+.preload {
+  background-image: url("../assets/img/preload.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 /* ===================================== media quaries =====================================*/
 @media screen and (max-width: 1065px) {
   .form-search {

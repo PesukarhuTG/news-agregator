@@ -30,6 +30,8 @@ const renderCard = (data) => {
 }
 
 const loadNews = async () => {
+  newsList.innerHTML = '<li class="preload"></li>';
+
   const country = localStorage.getItem('country') || 'ru';
 
   const choiceCity = designSelect();
