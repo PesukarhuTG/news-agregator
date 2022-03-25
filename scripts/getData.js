@@ -4,7 +4,7 @@ const getData = async (url) => {
   const resp = await fetch(url, {
     headers: {
       'X-Api-Key': API_KEY,
-    }
+    },
   });
 
   const data = await resp.json();
