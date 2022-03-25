@@ -35,7 +35,7 @@ const loadNews = async () => {
   const choiceCity = designSelect();
   choiceCity.setChoiceByValue(country);
 
-  const data = await getData(`https://newsapi.org/v2/top-headlines?country=${country}`);
+  const data = await getData(`https://newsapi.org/v2/top-headlines?country=${country}&pageSize=50`);
   renderCard(data.articles);
 }
 
