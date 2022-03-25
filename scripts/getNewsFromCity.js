@@ -1,4 +1,4 @@
-import loadNews from './loadNews.js';
+import { loadNews } from './loadNews.js';
 
 const getNewsFromCity = () => {
   const select = document.querySelector('.js-choice');

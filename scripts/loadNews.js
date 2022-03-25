@@ -3,7 +3,7 @@ import designSelect from './designSelect.js';
 
 const newsList = document.querySelector('.news-list');
 
-const renderCard = (data) => {
+export const renderCard = (data) => {
   newsList.textContent = '';
 
   data.forEach(news => {
@@ -29,7 +29,7 @@ const renderCard = (data) => {
   })
 }
 
-const loadNews = async () => {
+export const loadNews = async () => {
   newsList.innerHTML = '<li class="preload"></li>';
 
   const country = localStorage.getItem('country') || 'ru';
@@ -40,7 +40,3 @@ const loadNews = async () => {
   const data = await getData(`https://newsapi.org/v2/top-headlines?country=${country}&pageSize=50`);
   renderCard(data.articles);
 }
-
-
-
-export default loadNews;
