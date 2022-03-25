@@ -4,6 +4,21 @@ import designSelect from './designSelect.js';
 const newsList = document.querySelector('.news-list');
 const title = document.querySelector('.title');
 
+const getCorrectDateFormat = isoDate => {
+  const date = new Date(isoDate);
+  const fullDate = date.toLocaleString('en-GB', {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  });
+  const fullTime = date.toLocaleString('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
+  return `<span class="news-date">${fullDate}</span> ${fullTime}`;
+};
+
 export const renderCard = (data) => {
   newsList.textContent = '';
 
@@ -22,7 +37,7 @@ export const renderCard = (data) => {
         <p class="news-description">${description || ''}</p>
         <div class="news-footer">
             <time class="news-datetime" datetime="${publishedAt}">
-                <span class="news-date">${publishedAt}</span> 11:06
+                ${getCorrectDateFormat(publishedAt)}
             </time>
             <div class="news-author">${author || ''}</div>
         </div>
