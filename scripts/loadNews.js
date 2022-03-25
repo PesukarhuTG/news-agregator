@@ -1,4 +1,5 @@
 import getData from './getData.js';
+import designSelect from './designSelect.js';
 
 const newsList = document.querySelector('.news-list');
 
@@ -28,13 +29,16 @@ const renderCard = (data) => {
   })
 }
 
-const loadNews = async (country) => {
-  if (!country) {
-    country = 'ru';
-  }
+const loadNews = async () => {
+  const country = localStorage.getItem('country') || 'ru';
+
+  const choiceCity = designSelect();
+  choiceCity.setChoiceByValue(country);
 
   const data = await getData(`https://newsapi.org/v2/top-headlines?country=${country}`);
   renderCard(data.articles);
 }
+
+
 
 export default loadNews;

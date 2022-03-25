@@ -1,7 +1,7 @@
 import changeMode from './changeMode.js';
-import changeSelect from './changeSelect.js';
 import loadNews from './loadNews.js';
+import getNewsFromCity from './getNewsFromCity.js';
 
 changeMode();
-changeSelect();
 loadNews();
+getNewsFromCity();
